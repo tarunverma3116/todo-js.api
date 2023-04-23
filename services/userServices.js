@@ -52,7 +52,7 @@ export const loginUser = async (req, res) => {
     });
   }
   const payload = { id: user[0].id };
-  const token = jwt.sign(payload, "access_token", { expiresIn: "1h" });
+  const token = jwt.sign(payload, "access_token", { expiresIn: "5h" });
   return res.status(200).json({
     success: true,
     message: "User logged in successfully",

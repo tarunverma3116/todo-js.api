@@ -25,6 +25,23 @@ export const getTasks = async (req, res) => {
   });
 };
 
+export const getTask = async (req, res) => {
+  const { id } = req.params;
+  const [rows] = await pool.query("SELECT * FROM tasks WHERE id = ?", id);
+
+  if (rows.length === 0) {
+    return res.status(404).json({
+      success: false,
+      message: "Task not found",
+    });
+  }
+  return res.status(200).json({
+    success: true,
+    message: "Task retrieved successfully",
+    data: rows[0],
+  });
+};
+
 export const updateTask = async (req, res) => {
     const { id } = req.params;
     const { title, description } = req.body;

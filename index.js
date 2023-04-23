@@ -18,14 +18,16 @@ app.use((err, req, res, next) => {
     });
 });
 
-const start = async () => {    
-    try {
-        app.listen(8080, () => {
-            console.log("Server is running on port 8080");
-        });
-    } catch (err) {
-        console.log(err);
-    }
-}
+const PORT = process.env.PORT || 8000;
+
+const start = async () => {
+  try {
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 start();
