@@ -10,6 +10,10 @@ app.use(cors({ origin: "*" }));
 app.use("/api/users", userRouter);
 app.use("/api/tasks", taskRouter);
 
+app.use("/test", (req, res) => {
+  res.send("Hello World");
+});
+
 app.use((err, req, res, next) => {
   res.status(500).json({
     success: false,

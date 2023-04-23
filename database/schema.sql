@@ -1,14 +1,6 @@
 CREATE DATABASE IF NOT EXISTS `todo_app` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `todo_app`;
 
--- --------------------------------------------------------
-
---
-
--- Table structure for table `tasks`
-
---
-
 CREATE TABLE IF NOT EXISTS `tasks` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
@@ -18,14 +10,6 @@ CREATE TABLE IF NOT EXISTS `tasks` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- -------------------------------------------------------- 
-
---
-
--- Table structure for table `users`
-
---
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -37,15 +21,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
-
 INSERT INTO `users` (`name`, `email`, `password`) VALUES
 ('admin', 'admin@gmail.com', 'password');
-
--- --------------------------------------------------------
-
 
 CREATE TABLE IF NOT EXISTS `tasks` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -57,8 +34,6 @@ CREATE TABLE IF NOT EXISTS `tasks` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
 
 INSERT INTO `tasks` (`user_id`, `title`, `description`) VALUES
 (1, 'Task 1', 'Task 1 description'),
@@ -72,6 +47,5 @@ INSERT INTO `tasks` (`user_id`, `title`, `description`) VALUES
 (1, 'Task 9', 'Task 9 description'),
 (1, 'Task 10', 'Task 10 description');
 
--- --------------------------------------------------------
 
 
