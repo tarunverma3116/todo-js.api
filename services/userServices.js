@@ -57,7 +57,8 @@ export const loginUser = async (req, res) => {
     success: true,
     message: "User logged in successfully",
     data: {
-        "accessToken": token,
+      accessToken: token,
+      user: user[0],
     },
   });
 };

@@ -2,6 +2,7 @@ import express from "express";
 import userRouter from "./routes/user.js";
 import taskRouter from "./routes/tasks.js";
 import cors from "cors";
+import subTaskRouter from "./routes/subtasks.js";
 
 const app = express();
 app.use(express.json());
@@ -9,6 +10,7 @@ app.use(cors({ origin: "*" }));
 
 app.use("/api/users", userRouter);
 app.use("/api/tasks", taskRouter);
+app.use("/api/subtasks", subTaskRouter);
 
 app.use("/test", (req, res) => {
   res.send("Hello World");
